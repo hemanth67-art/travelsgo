@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoAdventure Pvt Ltd - Manali Trip</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --accent: #f97316;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .brand {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3.5rem 0 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: 1.1fr 1fr;
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .trip-dates {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #e0f2fe;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .trip-dates b {
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .date-badge {
+      background: var(--white);
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .cta-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 3rem 0;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (min-width: 768px) {
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    footer b {
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+    footer .domain {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-decoration: none;
+    }
+
+    footer .domain:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">Go<span>Adventure</span> Pvt Ltd</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Manali Trip</h1>
+        <p>Explore snow-capped peaks, alpine valleys, and winter landscapes with verified tour leads.</p>
+        
+        <div class="trip-dates">
+          <b>Dates</b>
+          <span class="date-badge">Dec 10</span>
+          <span class="date-badge">Jan 10</span>
+        </div>
+        
+        <div>
+          <a href="#contact" class="cta-btn">Book This Trip</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img 
+          src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80" 
+          alt="Scenic Manali Mountain Landscape" 
+        />
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3>Fixed departures</h3>
+        <p>Group trip on set dates, so you can plan ahead and just show up.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Guided and safe</h3>
+        <p>Experienced trip leaders look after the group from start to finish.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Easy booking</h3>
+        <p>Send your name and mobile number and our team will call you to confirm.</p>
+      </div>
+    </section>
+
+    <footer>
+      <b>GOADVENTURE PVT LTD</b>
+      <a href="https://degatrips.com" class="domain">degatrips.com</a>
+    </footer>
+  </div>
+</body>
+</html>
