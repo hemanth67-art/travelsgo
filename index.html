@@ -339,7 +339,7 @@
     <section class="booking-section" id="booking-form">
       <div class="booking-box">
         <h2>Reserve Your Spot</h2>
-        <p>Fill out the details below and our team will get in touch with you.</p>
+        <p>Fill out the details below and submit your inquiry directly.</p>
 
         <form id="tripForm" onsubmit="handleFormSubmit(event)">
           <div class="form-group">
@@ -362,7 +362,7 @@
             <textarea id="remarks" name="remarks" placeholder="Any specific requirements, pickup locations, or queries..."></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">Submit Booking Request</button>
+          <button type="submit" class="submit-btn">Send Booking Inquiry</button>
         </form>
       </div>
     </section>
@@ -376,12 +376,21 @@
   <script>
     function handleFormSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const mobile = document.getElementById('mobile').value;
+      const name = document.getElementById('name').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
       const travelDate = document.getElementById('travel_date').value;
-      const remarks = document.getElementById('remarks').value;
+      const remarks = document.getElementById('remarks').value.trim();
 
-      alert(`Thank you, ${name}! Your booking request for ${travelDate} has been received. Our team will contact you at ${mobile}.`);
+      // Replace 919876543210 with your target WhatsApp number (include 91, no spaces or +)
+      const targetPhone = "918074055382";
+
+      const text = `*New Booking Inquiry - GoAdventure Pvt Ltd*%0A%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Mobile:* ${encodeURIComponent(mobile)}%0A` +
+        `*Date of Travel:* ${encodeURIComponent(travelDate)}%0A` +
+        `*Remarks:* ${encodeURIComponent(remarks || 'None')}`;
+
+      window.open(`https://wa.me/${targetPhone}?text=${text}`, '_blank');
       document.getElementById('tripForm').reset();
     }
   </script>
